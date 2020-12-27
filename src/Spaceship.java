@@ -68,4 +68,16 @@ public class Spaceship extends BaseActor{
         Warp warpSecond = new Warp(0, 0, this.getStage());
         warpSecond.centerAtActor(this);
     }
+
+    public void shoot(){
+
+        if (getStage() == null) {
+            return;
+        }
+
+        Laser laser = new Laser(0, 0, this.getStage());
+        laser.centerAtActor(this);
+        laser.setRotation(this.getRotation());
+        laser.setMotionAngle(this.getRotation());
+    }
 }
